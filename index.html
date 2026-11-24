@@ -51,6 +51,8 @@ h1 { margin: 0; font-size: clamp(48px, 7vw, 88px); line-height: 1.02; }
 .meta .loc { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); }
 .meta a { border-bottom: 1px solid var(--ink); padding-bottom: 2px; }
 .meta a:hover { border-color: var(--blue); }
+.meta a.resume { border: 1px solid var(--blue); border-radius: 999px; padding: 7px 14px; color: #fff; background: rgba(76,125,255,.12); }
+.meta a.resume:hover { background: var(--blue); }
 
 .stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); }
 .stat { padding: 24px 24px 0 0; display: flex; flex-direction: column; gap: 6px; }
@@ -69,11 +71,11 @@ section > h2.ruled { padding-bottom: 20px; border-bottom: 1px solid var(--rule);
 .photo { flex: 0 0 auto; width: clamp(220px, 24vw, 320px); aspect-ratio: 1; margin: 9px; border-radius: 50%; overflow: hidden; position: relative; background: radial-gradient(circle at 30% 25%, #1b3cb8 0%, #0a1640 45%, #000 100%); box-shadow: 0 0 0 1px var(--line), 0 0 0 8px #000, 0 0 0 9px var(--blue); }
 .photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; transform: scale(1.35) translateY(-6%); transform-origin: 50% 40%; display: block; position: relative; z-index: 1; }
 .photo .mono { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--head); font-size: 110px; letter-spacing: -0.06em; color: #fff; }
-.about-text { flex: 1 1 100%; max-width: 860px; min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: 22px; font-size: 20px; line-height: 1.6; color: var(--body); }
+.about-text { flex: 1 1 100%; min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: 22px; font-size: 20px; line-height: 1.6; color: var(--body); }
 .about-text p { margin: 0; }
 .about-text strong { color: var(--ink); font-weight: 500; }
 
-#experience { display: flex; flex-direction: column; }
+#experience, #education { display: flex; flex-direction: column; }
 .role { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); column-gap: 64px; row-gap: 8px; padding: 28px 0; border-bottom: 1px solid var(--line); }
 .role .co { font-family: var(--head); font-size: 26px; letter-spacing: -0.03em; }
 .role .when { font-size: 14px; color: var(--muted); margin-top: 6px; }
@@ -103,7 +105,6 @@ section > h2.ruled { padding-bottom: 20px; border-bottom: 1px solid var(--rule);
 .group h3 { margin: 0; font-family: 'Hanken Grotesk', system-ui, sans-serif; font-size: 15px; font-weight: 500; letter-spacing: 0; color: var(--blue); }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; }
 .chip { font-size: 14px; padding: 7px 13px; border-radius: 999px; border: 1px solid var(--line); background: #000; color: var(--body); }
-.certs { margin: 0; font-size: 15px; color: var(--muted); }
 
 footer { display: flex; flex-direction: column; gap: 56px; padding-top: 24px; border-top: 1px solid var(--rule); }
 .big-link { font-size: clamp(48px, 8vw, 88px); line-height: 1; }
@@ -189,6 +190,7 @@ body.locked { overflow: hidden; }
       <a href="https://github.com/marcosesay">GitHub ↗</a>
       <a href="https://www.linkedin.com/in/marcosesay">LinkedIn ↗</a>
       <a href="https://substack.com/@marcosesay">Substack ↗</a>
+      <a class="resume" href="Marco_Sesay_Resume.pdf" target="_blank" rel="noopener">Resume (PDF) ↓</a>
     </div>
   </div>
   </div>
@@ -205,12 +207,12 @@ body.locked { overflow: hidden; }
 </header>
 
 <section id="about" aria-labelledby="about-h">
-  <h2 id="about-h">About</h2>
+  <h2 id="about-h">About me</h2>
   <div class="about-text">
-    <p>I think of myself as a <strong>builder plus seller</strong>. By day I sit with enterprise clients across financial services, healthcare, supply chain and tech, scoping the data platform, building the proof of concept, and structuring embedded solution agreements where companies run IBM technology inside their own products.</p>
-    <p>Around that work, I ship tools. Some are for the field, like a briefing generator IBM sellers use before calls. Some are for proving a point, like an eval suite that shows exactly why a demo agent isn't ready for production yet.</p>
-    <p>My path here ran through public health, data risk at PwC, customer experience analytics at Cisco and healthcare data compliance at Datavant, then a master's in Information Systems at Maryland. That mix is why I care so much about grounding: a confident answer that's wrong costs real people something.</p>
-    <p>Outside work, I DJ in New York, and yes, I built software for that too.</p>
+    <p>I'm a Data &amp; AI Solutions Engineer at IBM, where I lead technical sales cycles for enterprise clients across financial services, healthcare, supply chain and technology. I scope the data platform, build the proof of concept, and structure embedded solution agreements that put IBM technology inside clients' own products.</p>
+    <p>I also build the tools that make that work faster and more reliable: a briefing generator IBM sellers use before client calls, and evaluation suites that show what separates a convincing demo from a production-ready agent.</p>
+    <p>Before IBM, I worked in data risk at PwC, customer experience analytics at Cisco and healthcare data compliance at Datavant, after earning degrees in public health and information systems from the University of Maryland. That background shapes how I build AI systems: in regulated settings, an answer has to be grounded in the source, not just confident.</p>
+    <p>Outside work, I DJ in New York and built my own software to organize my music library.</p>
   </div>
 </section>
 
@@ -227,14 +229,29 @@ body.locked { overflow: hidden; }
 <section id="skills" aria-labelledby="skills-h">
   <h2 id="skills-h" class="ruled">Expertise</h2>
   <div class="skills" id="skill-groups"></div>
-  <p class="certs">30+ IBM certifications including the watsonx suite · PMI Certified Associate in Project Management (CAPM) · M.S. Information Systems, University of Maryland Smith School of Business</p>
+</section>
+
+<section id="education" aria-labelledby="edu-h">
+  <h2 id="edu-h" class="ruled">Education</h2>
+  <div class="role">
+    <div><div class="co">University of Maryland</div><div class="when">College Park, MD</div></div>
+    <div><div class="title">Master of Science, Information Systems &amp; Artificial Intelligence</div><p>Robert H. Smith School of Business.</p></div>
+  </div>
+  <div class="role">
+    <div><div class="co">University of Maryland</div><div class="when">College Park, MD</div></div>
+    <div><div class="title">Bachelor of Science, Public Health Science</div><p>School of Public Health.</p></div>
+  </div>
+  <div class="role">
+    <div><div class="co">Certifications</div></div>
+    <div><div class="title">PMI Certified Associate in Project Management (CAPM)</div><p>Plus 30+ IBM certifications, including the full watsonx suite (watsonx.ai, watsonx.data, watsonx.governance and watsonx Orchestrate).</p></div>
+  </div>
 </section>
 
 <footer>
   <a class="big-link" href="mailto:marcosesay17@gmail.com">Get in touch <span>→</span></a>
   <div class="fine">
     <span>© 2026 Marco Sesay</span>
-    <span>New York City · marcosesay17@gmail.com</span>
+    <span>New York City · marcosesay17@gmail.com · <a href="Marco_Sesay_Resume.pdf" target="_blank" rel="noopener">Resume</a></span>
   </div>
 </footer>
 
@@ -294,7 +311,8 @@ const projects = [
       ['The problem', 'A wrong case count in an outbreak brief is worse than no brief. So the design goal isn’t “summarize well,” it’s “never state a figure the report doesn’t support.”'],
       ['How it works', ['Fetch reports from WHO’s public API and strip them to plain text', 'Claude fills a strict schema through forced tool use, and every figure must carry the verbatim sentence it came from', 'Deterministic checks string-match each quote and number against the source, with no model involved', 'A second Claude pass splits the summary into claims and flags anything unsupported, then the draft gets one revision with the failures as feedback']],
       ['Eval results', { table: [['Reports clean', '20 / 20'], ['Figure values grounded', '212 / 212'], ['WHO risk levels grounded', '64 / 64'], ['Claims supported', '260 / 260']] }],
-      ['Why I built it', 'It draws on my public health degree and my time on healthcare data compliance. Human review of the latest run is in progress, because grounded isn’t the same as right.']
+      ['Takeaways', ['Grounding can be enforced, not just requested: requiring a verbatim source sentence for every figure meant all 212 numbers and 64 risk levels traced back to the WHO text', 'Deterministic checks belong first: plain string matching catches an invented number without trusting a model to grade itself, and the model-based claim check covers what string matching cannot', 'One revision with failures as feedback is enough: the critique-and-revise loop brought every report to clean without open-ended retries', 'Grounded is not the same as complete: the checks prove nothing was invented, not that the most important facts made the cut, so editorial judgment still belongs with a human reviewer']],
+      ['Why I built it', 'It draws on my public health degree and my time on healthcare data compliance, where a wrong number has real consequences.']
     ]
   },
   {
@@ -310,20 +328,20 @@ const projects = [
   },
   {
     id: 'apollo', name: 'Apollo 11 Knowledge Base',
-    desc: 'Contributor to a retrieval-augmented system over 400+ Apollo 11 mission documents, deployed on Red Hat OpenShift.',
+    desc: 'Led the production deployment of a retrieval-augmented question-answering system over 400+ Apollo 11 mission documents on Red Hat OpenShift, and built the flow for adding new documents to the corpus.',
     tags: ['Python', 'RAG', 'Chroma', 'OpenAI API', 'Red Hat OpenShift'],
-    links: [], note: 'Team project with an IBM colleague',
+    links: [],
     sections: [
-      ['What I worked on', ['Deployment and rollout on an OpenShift cluster', 'The archive capture flow for adding new documents to the corpus', 'Model configuration and corpus reload tooling after pod restarts']]
+      ['What I led', ['Deployment and rollout on a Red Hat OpenShift cluster', 'The archive capture flow for adding new documents to the corpus', 'Model configuration, plus tooling that reloads the corpus after pod restarts']]
     ]
   }
 ];
 
 const roles = [
-  ['IBM', 'Aug 2025 to now', 'Data & AI Solutions Engineer', 'Brand Technical Specialist covering 500+ named accounts in New York across watsonx, DataStage, Guardium, DataStax and Confluent. Led the first HIPAA-compliant watsonx.data deployment, built a custom Guardium cryptography demo behind an $800K deal, led 20+ technical workshops, and designed the Data & AI technical sales intern program.'],
-  ['Datavant', '2025', 'Systems Process Specialist', 'Worked with payers, insurers and federal programs on medical-records compliance and billing friction. Wrote 15+ SOPs and trained a 30-person call center team through system rollouts.'],
-  ['Cisco', '2023 to 2024', 'Data Analyst', 'Analyzed state and federal customer experience data for public sector network infrastructure, built ROI analyses, and led headcount and capacity forecasting for customer service teams.'],
-  ['PwC', 'Summer 2022', 'Consulting Intern, Data Risk & Regulation', 'Data risk and regulatory work while finishing my master’s at Maryland.']
+  ['IBM', 'Aug 2025 to Present', 'Data & AI Solutions Engineer', 'Brand Technical Specialist covering 500+ named accounts in New York across watsonx, DataStage, Guardium, DataStax and Confluent. Led the first HIPAA-compliant watsonx.data deployment, built a custom Guardium cryptography demo behind an $800K deal, led 20+ technical workshops, and designed the Data & AI technical sales intern program.'],
+  ['Datavant', 'Jan 2025 to Aug 2025', 'Technical Process Specialist, Customer Success', 'Worked with payers, insurers and federal programs on medical-records compliance and billing friction. Wrote 15+ SOPs and trained a 30-person call center team through system rollouts.'],
+  ['Cisco', 'Jan 2023 to Dec 2024', 'Data Analyst, Customer Experience', 'Analyzed state and federal customer experience data for public sector network infrastructure, built ROI analyses, and led headcount and capacity forecasting for customer service teams.'],
+  ['PwC', 'Jun 2022 to Aug 2022', 'Consulting Intern, Data Risk & Regulation', 'Assessed the data architecture of a client with $70B in assets to strengthen data governance and risk mitigation, and identified changes to cyber, risk and regulatory reporting with client stakeholders.']
 ];
 
 const skills = [
