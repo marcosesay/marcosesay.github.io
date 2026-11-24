@@ -61,12 +61,14 @@ h1 .name { color: var(--blue); white-space: nowrap; }
 h2 { margin: 0; font-size: 44px; }
 section > h2.ruled { padding-bottom: 20px; border-bottom: 1px solid var(--rule); }
 
-#about { display: flex; flex-wrap: wrap; gap: 40px 80px; padding-top: 24px; border-top: 1px solid var(--rule); }
+#about { display: flex; flex-wrap: wrap; gap: 32px 80px; padding-top: 24px; border-top: 1px solid var(--rule); }
 #about h2 { flex: 1 1 100%; }
-.photo { flex: 0 0 auto; width: clamp(240px, 30vw, 360px); aspect-ratio: 1; align-self: center; margin: 9px; border-radius: 50%; overflow: hidden; position: relative; background: radial-gradient(circle at 30% 25%, #1b3cb8 0%, #0a1640 45%, #000 100%); box-shadow: 0 0 0 1px var(--line), 0 0 0 8px #000, 0 0 0 9px var(--blue); }
-.photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; display: block; position: relative; z-index: 1; }
+.hero { display: flex; align-items: center; gap: 64px; }
+.hero-text { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 44px; }
+.photo { flex: 0 0 auto; width: clamp(220px, 24vw, 320px); aspect-ratio: 1; margin: 9px; border-radius: 50%; overflow: hidden; position: relative; background: radial-gradient(circle at 30% 25%, #1b3cb8 0%, #0a1640 45%, #000 100%); box-shadow: 0 0 0 1px var(--line), 0 0 0 8px #000, 0 0 0 9px var(--blue); }
+.photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; transform: scale(1.35); transform-origin: 50% 40%; display: block; position: relative; z-index: 1; }
 .photo .mono { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--head); font-size: 110px; letter-spacing: -0.06em; color: #fff; }
-.about-text { flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: 22px; font-size: 20px; line-height: 1.6; color: var(--body); }
+.about-text { flex: 1 1 100%; max-width: 860px; min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: 22px; font-size: 20px; line-height: 1.6; color: var(--body); }
 .about-text p { margin: 0; }
 .about-text strong { color: var(--ink); font-weight: 500; }
 
@@ -134,16 +136,25 @@ dialog.detail[open] { animation: pop .22s ease; }
 body.locked { overflow: hidden; }
 
 @media (max-width: 900px) {
+  .hero { flex-direction: column-reverse; align-items: flex-start; gap: 32px; }
+  .photo { width: 200px; }
   .project, .role { grid-template-columns: 1fr; }
 }
 @media (max-width: 640px) {
-  .wrap { padding: 24px 20px 32px; gap: 88px; }
+  .wrap { padding: 24px 20px 32px; gap: 72px; }
+  nav .links { gap: 20px; }
+  header { gap: 36px; }
+  .hero-text { gap: 32px; }
   h2 { font-size: 36px; }
   .project h3 { font-size: 28px; }
-  .photo { width: 240px; }
+  .photo { width: 156px; margin: 9px 0 0 9px; }
   .detail-inner { padding: 32px 24px 36px; }
   .detail h2 { font-size: 34px; }
   .stat b { font-size: 32px; }
+}
+@media (max-width: 400px) {
+  nav .links { gap: 16px; }
+  h1 { font-size: 50px; }
 }
 </style>
 </head>
@@ -162,6 +173,8 @@ body.locked { overflow: hidden; }
 </nav>
 
 <header id="top">
+  <div class="hero">
+  <div class="hero-text">
   <h1>Hi, I'm <span class="name">Marco Sesay</span>.</h1>
   <div class="intro">
     <p>I'm a Data &amp; AI Solutions Engineer at IBM in New York. I design data and AI platforms for enterprise clients, and I build the LLM tooling behind them: evals, agents, MCP servers and the apps sellers actually use.</p>
@@ -170,6 +183,12 @@ body.locked { overflow: hidden; }
       <a href="https://github.com/marcosesay">GitHub ↗</a>
       <a href="https://www.linkedin.com/in/marcosesay">LinkedIn ↗</a>
       <a href="https://substack.com/@marcosesay">Substack ↗</a>
+    </div>
+  </div>
+  </div>
+    <div class="photo">
+      <span class="mono" aria-hidden="true">MS</span>
+      <img src="marco.jpg" alt="Marco Sesay" onerror="this.remove()">
     </div>
   </div>
   <div class="stats">
@@ -181,10 +200,6 @@ body.locked { overflow: hidden; }
 
 <section id="about" aria-labelledby="about-h">
   <h2 id="about-h">About</h2>
-  <div class="photo">
-    <span class="mono" aria-hidden="true">MS</span>
-    <img src="marco.jpg" alt="Marco Sesay" onerror="this.remove()">
-  </div>
   <div class="about-text">
     <p>I think of myself as a <strong>builder plus seller</strong>. By day I sit with enterprise clients across financial services, healthcare, supply chain and tech, scoping the data platform, building the proof of concept, and structuring embedded solution agreements where companies run IBM technology inside their own products.</p>
     <p>Around that work, I ship tools. Some are for the field, like a briefing generator IBM sellers use before calls. Some are for proving a point, like an eval suite that shows exactly why a demo agent isn't ready for production yet.</p>
