@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marco Sesay</title>
+<meta name="description" content="Marco Sesay is a Data & AI Solutions Engineer at IBM in New York who designs enterprise data platforms and builds the LLM tooling behind them.">
+<meta property="og:title" content="Marco Sesay">
+<meta property="og:description" content="Data & AI Solutions Engineer at IBM in New York. Builder plus seller: enterprise data architecture, evals, agents and AI tooling.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://marcosesay.github.io/">
+<meta property="og:image" content="https://marcosesay.github.io/marco.jpg">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@500&family=Hanken+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #000000;
+  --panel: #0b0b0d;
+  --ink: #ffffff;
+  --body: #d4d7de;
+  --muted: #8b909c;
+  --line: #24262c;
+  --rule: #ffffff;
+  --blue: #4c7dff;
+  --blue-deep: #2b59ff;
+  --head: 'Lexend', system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: 'Hanken Grotesk', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+::selection { background: var(--blue); color: #fff; }
+a { color: var(--ink); text-decoration: none; transition: color .2s ease; }
+a:hover { color: var(--blue); }
+.wrap { max-width: 1200px; margin: 0 auto; padding: 32px 40px 40px; display: flex; flex-direction: column; gap: 120px; }
+h1, h2, h3, .big-link { font-family: var(--head); font-weight: 500; letter-spacing: -0.045em; }
+
+nav { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; font-size: 15px; padding-bottom: 20px; border-bottom: 1px solid var(--rule); }
+nav .links { display: flex; gap: 32px; flex-wrap: wrap; }
+
+header { display: flex; flex-direction: column; gap: 44px; }
+h1 { margin: 0; font-size: clamp(56px, 10vw, 120px); line-height: 1; }
+h1 .name { color: var(--blue); white-space: nowrap; }
+.intro { display: flex; flex-direction: column; gap: 28px; }
+.intro p { margin: 0; max-width: 700px; font-size: 21px; line-height: 1.6; color: var(--body); }
+.meta { display: flex; gap: 28px; flex-wrap: wrap; align-items: center; font-size: 15px; }
+.meta .loc { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); }
+.meta a { border-bottom: 1px solid var(--ink); padding-bottom: 2px; }
+.meta a:hover { border-color: var(--blue); }
+
+.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); }
+.stat { padding: 24px 24px 0 0; display: flex; flex-direction: column; gap: 6px; }
+.stat + .stat { padding-left: 24px; border-left: 1px solid var(--line); }
+.stat b { font-family: var(--head); font-weight: 500; font-size: 40px; letter-spacing: -0.04em; line-height: 1; }
+.stat b em { font-style: normal; color: var(--blue); }
+.stat span { font-size: 14px; color: var(--muted); line-height: 1.4; }
+
+h2 { margin: 0; font-size: 44px; }
+section > h2.ruled { padding-bottom: 20px; border-bottom: 1px solid var(--rule); }
+
+#about { display: flex; flex-wrap: wrap; gap: 40px 80px; padding-top: 24px; border-top: 1px solid var(--rule); }
+#about h2 { flex: 1 1 100%; }
+.photo { flex: 1 1 300px; max-width: 420px; min-height: 420px; border-radius: 4px; overflow: hidden; display: flex; position: relative; background: radial-gradient(circle at 30% 25%, #1b3cb8 0%, #0a1640 45%, #000 100%); border: 1px solid var(--line); }
+.photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 25%; display: block; position: relative; z-index: 1; }
+.photo .mono { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--head); font-size: 140px; letter-spacing: -0.06em; color: #fff; }
+.about-text { flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: 22px; font-size: 20px; line-height: 1.6; color: var(--body); }
+.about-text p { margin: 0; }
+.about-text strong { color: var(--ink); font-weight: 500; }
+
+#experience { display: flex; flex-direction: column; }
+.role { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); column-gap: 64px; row-gap: 8px; padding: 28px 0; border-bottom: 1px solid var(--line); }
+.role .co { font-family: var(--head); font-size: 26px; letter-spacing: -0.03em; }
+.role .when { font-size: 14px; color: var(--muted); margin-top: 6px; }
+.role .title { font-size: 17px; color: var(--blue); margin-bottom: 6px; }
+.role p { margin: 0; font-size: 17px; line-height: 1.6; color: var(--body); }
+
+#projects { display: flex; flex-direction: column; gap: 8px; }
+#projects h2 { margin-bottom: 16px; padding-bottom: 20px; border-bottom: 1px solid var(--rule); }
+.project-grid { display: flex; flex-direction: column; }
+.project { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); column-gap: 64px; row-gap: 14px; padding: 36px 0; border-bottom: 1px solid var(--line); cursor: pointer; }
+.project .left, .project .right { display: flex; flex-direction: column; gap: 14px; }
+.project h3 { margin: 0; font-size: 32px; line-height: 1.1; transition: color .2s ease; }
+.project:hover h3 { color: var(--blue); }
+.project p { margin: 0; font-size: 17px; line-height: 1.6; color: var(--body); }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; padding-top: 4px; }
+.tag { font-size: 13px; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel); color: var(--body); }
+.plinks { display: flex; gap: 18px; flex-wrap: wrap; font-size: 15px; }
+.plinks a { border-bottom: 1.5px solid var(--blue); padding-bottom: 2px; }
+.plinks .note { color: var(--muted); }
+.project .more { align-self: flex-start; font: inherit; font-size: 15px; color: var(--muted); background: none; border: 0; padding: 0 0 2px; cursor: pointer; border-bottom: 1.5px solid transparent; transition: color .2s ease, border-color .2s ease; }
+.project:hover .more, .project .more:focus-visible { color: var(--blue); border-color: var(--blue); }
+.project .more:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; }
+
+#skills { display: flex; flex-direction: column; gap: 28px; }
+.skills { display: flex; flex-wrap: wrap; background: var(--panel); border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; }
+.group { flex: 1 1 240px; display: flex; flex-direction: column; gap: 18px; padding: 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.group h3 { margin: 0; font-family: 'Hanken Grotesk', system-ui, sans-serif; font-size: 15px; font-weight: 500; letter-spacing: 0; color: var(--blue); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { font-size: 14px; padding: 7px 13px; border-radius: 999px; border: 1px solid var(--line); background: #000; color: var(--body); }
+.certs { margin: 0; font-size: 15px; color: var(--muted); }
+
+footer { display: flex; flex-direction: column; gap: 56px; padding-top: 24px; border-top: 1px solid var(--rule); }
+.big-link { font-size: clamp(48px, 8vw, 88px); line-height: 1; }
+.big-link span { color: var(--blue); display: inline-block; transition: transform .25s ease; }
+.big-link:hover span { transform: translateX(10px); }
+.fine { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 14px; color: var(--muted); }
+
+.gallery { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 6px; }
+.gallery[hidden] { display: none; }
+.gallery img { height: 180px; width: auto; display: block; border-radius: 8px; border: 1px solid var(--line); }
+
+dialog.detail { width: min(820px, calc(100vw - 32px)); max-height: calc(100vh - 48px); padding: 0; border: 1px solid var(--rule); border-radius: 10px; background: var(--panel); color: var(--ink); box-shadow: 0 30px 80px rgba(0, 0, 0, .6); }
+dialog.detail::backdrop { background: rgba(0, 0, 0, .7); backdrop-filter: blur(4px); }
+dialog.detail[open] { animation: pop .22s ease; }
+@keyframes pop { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+.detail-inner { padding: 48px 52px 52px; display: flex; flex-direction: column; gap: 28px; }
+.detail-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; }
+.detail h2 { font-size: 44px; line-height: 1.05; }
+.detail .summary { margin: 10px 0 0; font-size: 19px; line-height: 1.55; color: var(--body); }
+.close { flex: 0 0 auto; width: 44px; height: 44px; border-radius: 999px; border: 1px solid var(--line); background: #000; cursor: pointer; display: grid; place-items: center; transition: border-color .2s ease; }
+.close:hover { border-color: var(--blue); }
+.detail .plinks { font-size: 16px; gap: 22px; }
+.detail section { display: flex; flex-direction: column; gap: 10px; }
+.detail h4 { margin: 0; font-family: var(--head); font-weight: 500; font-size: 20px; letter-spacing: -0.02em; }
+.detail section p { margin: 0; font-size: 17px; line-height: 1.65; color: var(--body); }
+.detail ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; font-size: 17px; line-height: 1.6; color: var(--body); }
+.detail ul li::marker { color: var(--blue); }
+.detail table { border-collapse: collapse; font-size: 16px; color: var(--body); }
+.detail td { padding: 8px 18px 8px 0; border-bottom: 1px solid var(--line); }
+.detail td:last-child { color: var(--blue); font-family: var(--head); }
+body.locked { overflow: hidden; }
+
+@media (max-width: 900px) {
+  .project, .role { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .wrap { padding: 24px 20px 32px; gap: 88px; }
+  h2 { font-size: 36px; }
+  .project h3 { font-size: 28px; }
+  .photo { min-height: 360px; max-width: none; }
+  .detail-inner { padding: 32px 24px 36px; }
+  .detail h2 { font-size: 34px; }
+  .stat b { font-size: 32px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav aria-label="Main">
+  <a href="#top">Marco Sesay</a>
+  <div class="links">
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="mailto:marcosesay17@gmail.com">Email</a>
+  </div>
+</nav>
+
+<header id="top">
+  <h1>Hi, I'm <span class="name">Marco Sesay</span>.</h1>
+  <div class="intro">
+    <p>I'm a Data &amp; AI Solutions Engineer at IBM in New York. I design data and AI platforms for enterprise clients, and I build the LLM tooling behind them: evals, agents, MCP servers and the apps sellers actually use.</p>
+    <div class="meta">
+      <span class="loc"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>New York City</span>
+      <a href="https://github.com/marcosesay">GitHub ↗</a>
+      <a href="https://www.linkedin.com/in/marcosesay">LinkedIn ↗</a>
+      <a href="https://substack.com/@marcosesay">Substack ↗</a>
+    </div>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>500<em>+</em></b><span>named enterprise accounts</span></div>
+    <div class="stat"><b>30<em>+</em></b><span>IBM certifications</span></div>
+    <div class="stat"><b>1<em>st</em></b><span>HIPAA-compliant watsonx.data deployment</span></div>
+  </div>
+</header>
+
+<section id="about" aria-labelledby="about-h">
+  <h2 id="about-h">About</h2>
+  <div class="photo">
+    <span class="mono" aria-hidden="true">MS</span>
+    <img src="marco.jpg" alt="Marco Sesay" onerror="this.remove()">
+  </div>
+  <div class="about-text">
+    <p>I think of myself as a <strong>builder plus seller</strong>. By day I sit with enterprise clients across financial services, healthcare, supply chain and tech, scoping the data platform, building the proof of concept, and structuring embedded solution agreements where companies run IBM technology inside their own products.</p>
+    <p>Around that work, I ship tools. Some are for the field, like a briefing generator IBM sellers use before calls. Some are for proving a point, like an eval suite that shows exactly why a demo agent isn't ready for production yet.</p>
+    <p>My path here ran through public health, data risk at PwC, customer experience analytics at Cisco and healthcare data compliance at Datavant, then a master's in Information Systems at Maryland. That mix is why I care so much about grounding: a confident answer that's wrong costs real people something.</p>
+    <p>Outside work, I DJ in New York, and yes, I built software for that too.</p>
+  </div>
+</section>
+
+<section id="experience" aria-labelledby="exp-h">
+  <h2 id="exp-h" class="ruled">Experience</h2>
+  <div id="role-list"></div>
+</section>
+
+<section id="projects" aria-labelledby="proj-h">
+  <h2 id="proj-h">Projects</h2>
+  <div class="project-grid" id="project-list"></div>
+</section>
+
+<section id="skills" aria-labelledby="skills-h">
+  <h2 id="skills-h" class="ruled">Skills</h2>
+  <div class="skills" id="skill-groups"></div>
+  <p class="certs">30+ IBM certifications including the watsonx suite · PMI Certified Associate in Project Management (CAPM) · M.S. Information Systems, University of Maryland Smith School of Business</p>
+</section>
+
+<footer>
+  <a class="big-link" href="mailto:marcosesay17@gmail.com">Let's talk <span>→</span></a>
+  <div class="fine">
+    <span>© 2026 Marco Sesay</span>
+    <span>New York City · marcosesay17@gmail.com</span>
+  </div>
+</footer>
+
+</div>
+
+<dialog class="detail" id="detail" aria-labelledby="detail-title">
+  <div class="detail-inner">
+    <div class="detail-top">
+      <div>
+        <h2 id="detail-title"></h2>
+        <p class="summary" id="detail-summary"></p>
+      </div>
+      <button class="close" type="button" aria-label="Close" id="detail-close"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><path d="M2 2l10 10M12 2L2 12"/></svg></button>
+    </div>
+    <div class="gallery" id="detail-gallery" hidden></div>
+    <div class="plinks" id="detail-links"></div>
+    <div id="detail-body" style="display:flex;flex-direction:column;gap:28px"></div>
+    <section>
+      <h4>Tech stack</h4>
+      <div class="tags" id="detail-tags"></div>
+    </section>
+  </div>
+</dialog>
+
+<script>
+// To add screenshots to a project, drop images in /images and add: imgs: [['images/file.png', 'alt text']]
+const projects = [
+  {
+    id: 'evals-lab', name: 'Evals Lab',
+    desc: 'A hands-on workshop for taking an enterprise AI agent from demo to production. A policy copilot for a fictional bank is graded on 26 cases, including trap questions the policy manual never covers, and climbs from 38% to 100% across three versions.',
+    tags: ['Python', 'OpenAI Agents SDK', 'File search', 'Evals', 'LLM-as-judge', 'Pydantic', 'Codex'],
+    links: [['Code', 'https://github.com/marcosesay/evals-lab-demo-to-production']],
+    sections: [
+      ['The problem', 'A prototype can sound convincing while citing the wrong rule, inventing an answer, or missing that a question is outside its source material. In a bank operations setting, a confident but unsupported answer is a customer, compliance and operational risk.'],
+      ['What it does', ['Builds a policy copilot on the OpenAI Agents SDK with hosted file search over a fictional bank manual', 'Grades it on 26 hand-authored cases: 14 direct lookups, 5 multi-section reasoning cases and 7 trap questions', 'Uses hybrid grading: an LLM judge scores correctness and refusals, a deterministic check scores citations', 'Compares versions case by case so regressions are visible, not hidden in an average']],
+      ['The results', { table: [['v1 · naive prompt', '38%'], ['v2 · prompt engineering', '58%'], ['v3 · structured outputs', '100%']] }],
+      ['Why it matters', 'The eval suite caught a refusal regression that the structured-output change introduced, which is exactly the point. The whole thing is packaged as a lab guide a customer engineering team can follow in an afternoon.']
+    ]
+  },
+  {
+    id: 'sales-intel', name: 'Sales Intelligence',
+    desc: 'Generates a seller-ready briefing for any account: executive summary, competitive angle, sales plays and a proposed architecture diagram. In production on IBM Code Engine and used by IBM field sellers.',
+    tags: ['React', 'TypeScript', 'Node / Express', 'watsonx.ai', 'Claude API', 'MCP', 'PostgreSQL', 'IBM Code Engine', 'Vitest'],
+    links: [['Code', 'https://github.com/marcosesay/IBM-sales-intelligence']],
+    sections: [
+      ['The problem', 'Prepping for a client call means hours of research across news, LinkedIn and product docs, and generic AI output tends to invent product specs a seller then repeats in front of a customer.'],
+      ['What it does', ['Turns a company name and LinkedIn profile into a structured briefing with discovery questions, BANT and MEDDIC qualification, and IBM product recommendations', 'Pulls research live and streams the briefing as it generates', 'Proposes an architecture diagram and exports a formatted PDF', 'Exposes an MCP server so agents can look up IBM products and query past briefings directly']],
+      ['How it works', 'Generation runs on watsonx (Llama 3.3 70B) or Claude. A critic pass checks the output against a curated IBM product reference to suppress hallucinated specs. The backend runs on IBM Code Engine with Postgres for history, so saved briefings survive redeploys and multi-pod scaling, and a Vitest suite covers the API and frontend utilities.']
+    ]
+  },
+  {
+    id: 'outbreak', name: 'Outbreak Signal',
+    desc: 'Turns WHO Disease Outbreak News reports into short, structured briefs for public health decision-makers, and checks every number against the source before it ships.',
+    tags: ['Python', 'Claude API', 'Tool use', 'Structured extraction', 'Evals', 'Grounding checks'],
+    links: [['Code', 'https://github.com/marcosesay/outbreak-signal-summarizer']],
+    sections: [
+      ['The problem', 'A wrong case count in an outbreak brief is worse than no brief. So the design goal isn’t “summarize well,” it’s “never state a figure the report doesn’t support.”'],
+      ['How it works', ['Fetch reports from WHO’s public API and strip them to plain text', 'Claude fills a strict schema through forced tool use, and every figure must carry the verbatim sentence it came from', 'Deterministic checks string-match each quote and number against the source, with no model involved', 'A second Claude pass splits the summary into claims and flags anything unsupported, then the draft gets one revision with the failures as feedback']],
+      ['Eval results', { table: [['Reports clean', '20 / 20'], ['Figure values grounded', '212 / 212'], ['WHO risk levels grounded', '64 / 64'], ['Claims supported', '260 / 260']] }],
+      ['Why I built it', 'It draws on my public health degree and my time on healthcare data compliance. Human review of the latest run is in progress, because grounded isn’t the same as right.']
+    ]
+  },
+  {
+    id: 'dj-library', name: 'DJ Library Organizer',
+    desc: 'Turns an unstructured local music library into harmonically compatible crates using Camelot key clustering, has Claude name each playlist, and exports to rekordbox. Built for my own sets as a working DJ in New York.',
+    tags: ['React', 'Node.js', 'Claude API', 'rekordbox XML', 'Audio metadata'],
+    links: [['Write-up on Substack', 'https://substack.com/@marcosesay']], note: 'Runs locally',
+    sections: [
+      ['The problem', 'A big local library of .m4a and .mp3 files is a mess to dig through mid-set. Finding tracks that mix cleanly in key shouldn’t mean scrolling for twenty minutes.'],
+      ['What it does', ['Reads key metadata and clusters tracks on the Camelot wheel for harmonic mixing', 'Has Claude give each crate a name that actually describes its feel', 'Exports playlists to rekordbox XML and .m3u8']],
+      ['The story', 'I wrote about building it, and what it taught me about using AI for curation, in my first Substack piece.']
+    ]
+  },
+  {
+    id: 'apollo', name: 'Apollo 11 Knowledge Base',
+    desc: 'Contributor to a retrieval-augmented system over 400+ Apollo 11 mission documents, deployed on Red Hat OpenShift.',
+    tags: ['Python', 'RAG', 'Chroma', 'OpenAI API', 'Red Hat OpenShift'],
+    links: [], note: 'Team project with an IBM colleague',
+    sections: [
+      ['What I worked on', ['Deployment and rollout on an OpenShift cluster', 'The archive capture flow for adding new documents to the corpus', 'Model configuration and corpus reload tooling after pod restarts']]
+    ]
+  }
+];
+
+const roles = [
+  ['IBM', 'Aug 2025 to now', 'Data & AI Solutions Engineer', 'Brand Technical Specialist covering 500+ named accounts in New York across watsonx, DataStage, Guardium, DataStax and Confluent. Led the first HIPAA-compliant watsonx.data deployment, built a custom Guardium cryptography demo behind an $800K deal, led 20+ technical workshops, and designed the Data & AI technical sales intern program.'],
+  ['Datavant', '2025', 'Systems Process Specialist', 'Worked with payers, insurers and federal programs on medical-records compliance and billing friction. Wrote 15+ SOPs and trained a 30-person call center team through system rollouts.'],
+  ['Cisco', '2023 to 2024', 'Data Analyst', 'Analyzed state and federal customer experience data for public sector network infrastructure, built ROI analyses, and led headcount and capacity forecasting for customer service teams.'],
+  ['PwC', 'Summer 2022', 'Consulting Intern, Data Risk & Regulation', 'Data risk and regulatory work while finishing my master’s at Maryland.']
+];
+
+const skills = [
+  ['Data & AI platforms', ['watsonx.ai', 'watsonx.data', 'watsonx.governance', 'watsonx Orchestrate', 'DataStage', 'DataStax', 'Confluent']],
+  ['AI engineering', ['RAG', 'Evals', 'AI agents', 'MCP', 'Tool calling', 'OpenAI Agents SDK', 'Claude API', 'Codex']],
+  ['Security & governance', ['IBM Guardium', 'Data governance', 'HIPAA architecture', 'Lineage and catalog']],
+  ['Infrastructure', ['IBM Code Engine', 'Red Hat OpenShift', 'Docker', 'PostgreSQL', 'Git']],
+  ['Languages', ['Python', 'TypeScript', 'SQL', 'Java', 'R']],
+  ['Field', ['Technical workshops', 'Proofs of concept', 'Embedded solution agreements', 'Business value assessments', 'Salesforce', 'SalesLoft']]
+];
+
+const el = (tag, cls, text) => { const n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; };
+const dlg = document.getElementById('detail');
+
+function openProject(p, push = true) {
+  document.getElementById('detail-title').textContent = p.name;
+  document.getElementById('detail-summary').textContent = p.desc;
+  const gal = document.getElementById('detail-gallery');
+  const pics = p.imgs || [];
+  gal.replaceChildren(...pics.map(([src, alt]) => { const im = el('img'); im.src = src; im.alt = alt; return im; }));
+  gal.hidden = !pics.length;
+  const links = document.getElementById('detail-links');
+  links.replaceChildren();
+  p.links.forEach(([label, href]) => { const a = el('a', null, label + ' ↗'); a.href = href; a.target = '_blank'; a.rel = 'noopener'; links.append(a); });
+  if (p.note) links.append(el('span', 'note', p.note));
+  links.hidden = !p.links.length && !p.note;
+  document.getElementById('detail-body').replaceChildren(...p.sections.map(([h, content]) => {
+    const sec = el('section');
+    sec.append(el('h4', null, h));
+    if (Array.isArray(content)) {
+      const ul = el('ul'); content.forEach(t => ul.append(el('li', null, t))); sec.append(ul);
+    } else if (content && content.table) {
+      const t = el('table'); content.table.forEach(([a, b]) => { const tr = el('tr'); tr.append(el('td', null, a), el('td', null, b)); t.append(tr); }); sec.append(t);
+    } else {
+      sec.append(el('p', null, content));
+    }
+    return sec;
+  }));
+  document.getElementById('detail-tags').replaceChildren(...p.tags.map(t => el('span', 'tag', t)));
+  if (!dlg.open) dlg.showModal();
+  dlg.scrollTop = 0;
+  document.body.classList.add('locked');
+  if (push) history.replaceState(null, '', '#' + p.id);
+}
+dlg.addEventListener('close', () => { document.body.classList.remove('locked'); history.replaceState(null, '', location.pathname + location.search); });
+document.getElementById('detail-close').addEventListener('click', () => dlg.close());
+dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+
+document.getElementById('project-list').replaceChildren(...projects.map(p => {
+  const art = el('article', 'project');
+  const left = el('div', 'left');
+  const more = el('button', 'more', 'View project →');
+  more.type = 'button'; more.setAttribute('aria-label', 'View details for ' + p.name);
+  left.append(el('h3', null, p.name), more);
+  const right = el('div', 'right');
+  const tags = el('div', 'tags'); p.tags.forEach(t => tags.append(el('span', 'tag', t)));
+  right.append(el('p', null, p.desc), tags);
+  art.append(left, right);
+  art.addEventListener('click', () => openProject(p));
+  return art;
+}));
+
+document.getElementById('role-list').replaceChildren(...roles.map(([co, when, title, text]) => {
+  const r = el('div', 'role');
+  const left = el('div'); left.append(el('div', 'co', co), el('div', 'when', when));
+  const right = el('div'); right.append(el('div', 'title', title), el('p', null, text));
+  r.append(left, right);
+  return r;
+}));
+
+document.getElementById('skill-groups').replaceChildren(...skills.map(([name, items]) => {
+  const g = el('div', 'group');
+  g.append(el('h3', null, name));
+  const chips = el('div', 'chips'); items.forEach(s => chips.append(el('span', 'chip', s)));
+  g.append(chips);
+  return g;
+}));
+
+const fromHash = projects.find(p => '#' + p.id === location.hash);
+if (fromHash) openProject(fromHash, false);
+</script>
+</body>
+</html>
