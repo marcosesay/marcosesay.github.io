@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Marco Sesay</title>
+<title>Marco Sesay · Data &amp; AI Solutions Engineer</title>
 <meta name="description" content="Marco Sesay is a Data & AI Solutions Engineer at IBM in New York who designs enterprise data platforms and builds the LLM tooling behind them.">
 <meta property="og:title" content="Marco Sesay">
 <meta property="og:description" content="Data & AI Solutions Engineer at IBM in New York. Builder plus seller: enterprise data architecture, evals, agents and AI tooling.">
@@ -42,8 +42,9 @@ nav { display: flex; justify-content: space-between; align-items: center; flex-w
 nav .links { display: flex; gap: 32px; flex-wrap: wrap; }
 
 header { display: flex; flex-direction: column; gap: 44px; }
-h1 { margin: 0; font-size: clamp(56px, 10vw, 120px); line-height: 1; }
-h1 .name { color: var(--blue); white-space: nowrap; }
+h1 { margin: 0; font-size: clamp(48px, 7vw, 88px); line-height: 1.02; }
+.title-block { display: flex; flex-direction: column; gap: 18px; }
+.eyebrow { margin: 0; font-size: 14px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--blue); }
 .intro { display: flex; flex-direction: column; gap: 28px; }
 .intro p { margin: 0; max-width: 700px; font-size: 21px; line-height: 1.6; color: var(--body); }
 .meta { display: flex; gap: 28px; flex-wrap: wrap; align-items: center; font-size: 15px; }
@@ -153,8 +154,10 @@ body.locked { overflow: hidden; }
   .stat b { font-size: 32px; }
 }
 @media (max-width: 400px) {
-  nav .links { gap: 16px; }
-  h1 { font-size: 50px; }
+  nav { font-size: 14px; }
+  nav .links { gap: 14px; }
+  h1 { font-size: 44px; }
+  .eyebrow { font-size: 12px; letter-spacing: .12em; }
 }
 </style>
 </head>
@@ -166,18 +169,21 @@ body.locked { overflow: hidden; }
   <div class="links">
     <a href="#about">About</a>
     <a href="#experience">Experience</a>
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
-    <a href="mailto:marcosesay17@gmail.com">Email</a>
+    <a href="#projects">Work</a>
+    <a href="#skills">Expertise</a>
+    <a href="mailto:marcosesay17@gmail.com">Contact</a>
   </div>
 </nav>
 
 <header id="top">
   <div class="hero">
   <div class="hero-text">
-  <h1>Hi, I'm <span class="name">Marco Sesay</span>.</h1>
+  <div class="title-block">
+    <p class="eyebrow">Data &amp; AI Solutions Engineer · IBM</p>
+    <h1>Marco Sesay</h1>
+  </div>
   <div class="intro">
-    <p>I'm a Data &amp; AI Solutions Engineer at IBM in New York. I design data and AI platforms for enterprise clients, and I build the LLM tooling behind them: evals, agents, MCP servers and the apps sellers actually use.</p>
+    <p>I design data and AI platforms for enterprise clients across financial services, healthcare and technology, and I build the LLM tooling behind them: evaluation suites, agents, MCP servers and the applications sellers rely on in the field.</p>
     <div class="meta">
       <span class="loc"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>New York City</span>
       <a href="https://github.com/marcosesay">GitHub ↗</a>
@@ -214,18 +220,18 @@ body.locked { overflow: hidden; }
 </section>
 
 <section id="projects" aria-labelledby="proj-h">
-  <h2 id="proj-h">Projects</h2>
+  <h2 id="proj-h">Selected Work</h2>
   <div class="project-grid" id="project-list"></div>
 </section>
 
 <section id="skills" aria-labelledby="skills-h">
-  <h2 id="skills-h" class="ruled">Skills</h2>
+  <h2 id="skills-h" class="ruled">Expertise</h2>
   <div class="skills" id="skill-groups"></div>
   <p class="certs">30+ IBM certifications including the watsonx suite · PMI Certified Associate in Project Management (CAPM) · M.S. Information Systems, University of Maryland Smith School of Business</p>
 </section>
 
 <footer>
-  <a class="big-link" href="mailto:marcosesay17@gmail.com">Let's talk <span>→</span></a>
+  <a class="big-link" href="mailto:marcosesay17@gmail.com">Get in touch <span>→</span></a>
   <div class="fine">
     <span>© 2026 Marco Sesay</span>
     <span>New York City · marcosesay17@gmail.com</span>
